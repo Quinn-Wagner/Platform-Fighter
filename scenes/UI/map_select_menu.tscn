@@ -1,0 +1,288 @@
+[gd_scene load_steps=23 format=3 uid="uid://durj4rsbcog7e"]
+
+[ext_resource type="Script" path="res://scenes/UI/map_select_menu.gd" id="1_cyr6h"]
+[ext_resource type="Texture2D" uid="uid://cb8wvcac6hnt8" path="res://assets/Icons/map1.png" id="2_1ufgo"]
+[ext_resource type="Script" path="res://scenes/UI/ParallaxBackground.gd" id="2_711a0"]
+[ext_resource type="Texture2D" uid="uid://b00qjrdvaptpg" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/1.png" id="3_uwoqm"]
+[ext_resource type="Texture2D" uid="uid://bnndjs04e5we7" path="res://assets/Icons/map2.png" id="3_ylofk"]
+[ext_resource type="Texture2D" uid="uid://b2fowygiqnaay" path="res://assets/Icons/map3.png" id="4_b26m6"]
+[ext_resource type="Texture2D" uid="uid://do57tur1p17gt" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/2.png" id="4_bcrpf"]
+[ext_resource type="Texture2D" uid="uid://dr7p6g6lwsw0n" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/3.png" id="5_byeuv"]
+[ext_resource type="Texture2D" uid="uid://cijq2qovd28sf" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/4.png" id="6_6k235"]
+[ext_resource type="Texture2D" uid="uid://0a0icwqkh3bm" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_5/1.png" id="7_c0iwe"]
+[ext_resource type="Texture2D" uid="uid://bdmlee0emonak" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_1/2.png" id="8_r7gwj"]
+[ext_resource type="Texture2D" uid="uid://1i46h2ym71ws" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_5/3.png" id="9_wofso"]
+[ext_resource type="Texture2D" uid="uid://b6xs500q65h7n" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_5/4.png" id="10_mqya3"]
+[ext_resource type="Texture2D" uid="uid://bxp5xugjnrpwn" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_4/1.png" id="11_o4q55"]
+[ext_resource type="Texture2D" uid="uid://b56r34742higm" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_4/2.png" id="12_t55n3"]
+[ext_resource type="Texture2D" uid="uid://78i6pjqgvux2" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_4/3.png" id="13_n5oty"]
+[ext_resource type="Texture2D" uid="uid://dlbfx4v3xo15e" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_4/4.png" id="14_ts00e"]
+[ext_resource type="Texture2D" uid="uid://bgipx3wdt158q" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_6/1.png" id="15_l1iah"]
+[ext_resource type="Texture2D" uid="uid://toha5gtixoxp" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_6/3.png" id="16_jths7"]
+
+[sub_resource type="SystemFont" id="SystemFont_f4cg0"]
+font_names = PackedStringArray("Eras ITC")
+font_weight = 999
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rmjpi"]
+thickness = 0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wdnrg"]
+thickness = 0
+
+[node name="map_select_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cyr6h")
+
+[node name="Backgrounds" type="CanvasLayer" parent="."]
+
+[node name="MenuBackground" type="ParallaxBackground" parent="Backgrounds"]
+layer = -95
+script = ExtResource("2_711a0")
+
+[node name="Sky" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/Sky"]
+position = Vector2(-1.52588e-05, 3.8147e-06)
+scale = Vector2(2.43056, 2.79012)
+texture = ExtResource("3_uwoqm")
+centered = false
+
+[node name="NorthernLights" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/NorthernLights"]
+scale = Vector2(2.43056, 2.07099)
+texture = ExtResource("4_bcrpf")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/Mountains"]
+position = Vector2(0, 216)
+scale = Vector2(2.43056, 2.12346)
+texture = ExtResource("5_byeuv")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/ParallaxLayer"]
+scale = Vector2(2.44444, 2.79012)
+texture = ExtResource("6_6k235")
+centered = false
+
+[node name="Map1Background" type="ParallaxBackground" parent="Backgrounds"]
+script = ExtResource("2_711a0")
+
+[node name="Sky" type="ParallaxLayer" parent="Backgrounds/Map1Background"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map1Background/Sky"]
+scale = Vector2(2.44444, 2.76543)
+texture = ExtResource("7_c0iwe")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="Backgrounds/Map1Background"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map1Background/Clouds"]
+scale = Vector2(2.44444, 2.76543)
+texture = ExtResource("8_r7gwj")
+centered = false
+
+[node name="Field" type="ParallaxLayer" parent="Backgrounds/Map1Background"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map1Background/Field"]
+scale = Vector2(2.44444, 2.77469)
+texture = ExtResource("9_wofso")
+centered = false
+
+[node name="Foreground" type="ParallaxLayer" parent="Backgrounds/Map1Background"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map1Background/Foreground"]
+scale = Vector2(2.44444, 2.77778)
+texture = ExtResource("10_mqya3")
+centered = false
+
+[node name="Map2Background" type="ParallaxBackground" parent="Backgrounds"]
+script = ExtResource("2_711a0")
+
+[node name="Sky" type="ParallaxLayer" parent="Backgrounds/Map2Background"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map2Background/Sky"]
+scale = Vector2(2.44444, 2.77778)
+texture = ExtResource("11_o4q55")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="Backgrounds/Map2Background"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map2Background/Clouds"]
+scale = Vector2(2.44444, 2.77778)
+texture = ExtResource("12_t55n3")
+centered = false
+
+[node name="Trees1" type="ParallaxLayer" parent="Backgrounds/Map2Background"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map2Background/Trees1"]
+scale = Vector2(2.44444, 2.77778)
+texture = ExtResource("13_n5oty")
+centered = false
+
+[node name="Trees2" type="ParallaxLayer" parent="Backgrounds/Map2Background"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map2Background/Trees2"]
+scale = Vector2(2.44444, 2.77778)
+texture = ExtResource("14_ts00e")
+centered = false
+
+[node name="Map3Background" type="ParallaxBackground" parent="Backgrounds"]
+script = ExtResource("2_711a0")
+
+[node name="NorthernLights" type="ParallaxLayer" parent="Backgrounds/Map3Background"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map3Background/NorthernLights"]
+scale = Vector2(2.44444, 2.79012)
+texture = ExtResource("15_l1iah")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="Backgrounds/Map3Background"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/Map3Background/Mountains"]
+scale = Vector2(2.44444, 2.79012)
+texture = ExtResource("16_jths7")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_top = 125.0
+offset_right = 236.0
+offset_bottom = 372.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0941176, 0.690196, 0.266667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_f4cg0")
+theme_override_font_sizes/font_size = 64
+text = "LEVEL SELECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -263.0
+offset_right = 60.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -565.0
+offset_top = -99.0
+offset_right = 575.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Map1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.662745, 0.662745, 1)
+toggle_mode = true
+icon = ExtResource("2_1ufgo")
+icon_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_rmjpi")
+
+[node name="Map2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.662745, 0.662745, 1)
+toggle_mode = true
+text = "
+"
+icon = ExtResource("3_ylofk")
+icon_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_wdnrg")
+
+[node name="Map3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.662745, 0.662745, 1)
+toggle_mode = true
+text = "
+"
+icon = ExtResource("4_b26m6")
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Map1" to="." method="_on_map_1_pressed"]
+[connection signal="toggled" from="HBoxContainer/Map1" to="." method="_on_map_1_toggled"]
+[connection signal="pressed" from="HBoxContainer/Map2" to="." method="_on_map_2_pressed"]
+[connection signal="toggled" from="HBoxContainer/Map2" to="." method="_on_map_2_toggled"]
+[connection signal="pressed" from="HBoxContainer/Map3" to="." method="_on_map_3_pressed"]
+[connection signal="toggled" from="HBoxContainer/Map3" to="." method="_on_map_3_toggled"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://din04ylgfofrd"]
+
+[ext_resource type="Script" path="res://scenes/UI/main_menu.gd" id="1_x4ose"]
+[ext_resource type="Script" path="res://scenes/UI/ParallaxBackground.gd" id="2_3v3hx"]
+[ext_resource type="Texture2D" uid="uid://b00qjrdvaptpg" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/1.png" id="3_va0x6"]
+[ext_resource type="Texture2D" uid="uid://do57tur1p17gt" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/2.png" id="4_5y6do"]
+[ext_resource type="Texture2D" uid="uid://dr7p6g6lwsw0n" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/3.png" id="5_dnop8"]
+[ext_resource type="Texture2D" uid="uid://cijq2qovd28sf" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/4.png" id="6_bymmt"]
+
+[sub_resource type="SystemFont" id="SystemFont_bpsbt"]
+font_names = PackedStringArray("Eras ITC")
+font_weight = 999
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_x4ose")
+metadata/_edit_horizontal_guides_ = [304.0]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_3v3hx")
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(-1.52588e-05, 3.8147e-06)
+scale = Vector2(2.43056, 2.79012)
+texture = ExtResource("3_va0x6")
+centered = false
+
+[node name="NorthernLights" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/NorthernLights"]
+scale = Vector2(2.43056, 2.07099)
+texture = ExtResource("4_5y6do")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountains"]
+position = Vector2(0, 216)
+scale = Vector2(2.43056, 2.12346)
+texture = ExtResource("5_dnop8")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2.44444, 2.79012)
+texture = ExtResource("6_bymmt")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.805556
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0941176, 0.690196, 0.266667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_bpsbt")
+theme_override_font_sizes/font_size = 64
+text = "FRENZIED FIGHTERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 304.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

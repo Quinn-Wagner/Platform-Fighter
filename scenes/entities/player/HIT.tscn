@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://daye6mtf2k5n3"]
+
+[ext_resource type="Script" path="res://scenes/entities/player/HIT.gd" id="1_weo8m"]
+
+[node name="HIT" type="Node"]
+script = ExtResource("1_weo8m")
+
+[node name="HitBuffer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="timeout" from="HitBuffer" to="." method="_on_hit_buffer_timeout"]

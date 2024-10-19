@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://q7wi8kd4c6j1"]
+
+[ext_resource type="Script" path="res://scenes/UI/host_join_menu.gd" id="1_y2p0d"]
+[ext_resource type="Script" path="res://scenes/UI/ParallaxBackground.gd" id="2_hoff1"]
+[ext_resource type="Texture2D" uid="uid://b00qjrdvaptpg" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/1.png" id="3_r5ia1"]
+[ext_resource type="Texture2D" uid="uid://do57tur1p17gt" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/2.png" id="4_rwxw1"]
+[ext_resource type="Texture2D" uid="uid://dr7p6g6lwsw0n" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/3.png" id="5_q0u5c"]
+[ext_resource type="Texture2D" uid="uid://cijq2qovd28sf" path="res://assets/craftpix-net-800370-free-nature-backgrounds-pixel-art/nature_2/4.png" id="6_1l87r"]
+
+[sub_resource type="SystemFont" id="SystemFont_1f385"]
+font_names = PackedStringArray("Eras ITC")
+font_weight = 999
+
+[node name="host_join_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y2p0d")
+
+[node name="Backgrounds" type="CanvasLayer" parent="."]
+
+[node name="MenuBackground" type="ParallaxBackground" parent="Backgrounds"]
+layer = -95
+script = ExtResource("2_hoff1")
+
+[node name="Sky" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/Sky"]
+position = Vector2(-1.52588e-05, 3.8147e-06)
+scale = Vector2(2.43056, 2.79012)
+texture = ExtResource("3_r5ia1")
+centered = false
+
+[node name="NorthernLights" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/NorthernLights"]
+scale = Vector2(2.43056, 2.07099)
+texture = ExtResource("4_rwxw1")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/Mountains"]
+position = Vector2(0, 216)
+scale = Vector2(2.43056, 2.12346)
+texture = ExtResource("5_q0u5c")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/MenuBackground"]
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds/MenuBackground/ParallaxLayer"]
+scale = Vector2(2.44444, 2.79012)
+texture = ExtResource("6_1l87r")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_top = -1.0
+offset_right = 228.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0941176, 0.690196, 0.266667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_1f385")
+theme_override_font_sizes/font_size = 64
+text = "HOST/JOIN 
+GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -243.0
+offset_right = 60.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Host" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join
+"
+
+[node name="Select Level" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Select Level"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 221.0
+offset_right = 836.0
+offset_bottom = 252.0
+
+[node name="EnterName" type="Label" parent="LineEdit"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = -5.0
+offset_right = -75.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0941176, 0.690196, 0.266667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_1f385")
+theme_override_font_sizes/font_size = 20
+text = "Enter Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 318.0
+offset_right = 931.0
+offset_bottom = 605.0
+
+[connection signal="pressed" from="VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/Select Level" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
